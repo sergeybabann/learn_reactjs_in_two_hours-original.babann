@@ -1,23 +1,31 @@
 
 import styles from './Home.module.css'
-
+import {cars} from './cars.data'
 
 function Home() {
     return (
       <div>
         <h1>Cars catalog</h1>
         <div>
-          <div className={styles.item}>
+          {cars.map(car => (
+            <div key={car.id} className={styles.item}>
           <div 
                 className={styles.image}
                 style={{
-                backgroundImage: 'url("/1.jpg")',
+                backgroundImage: `url(${car.image})`,
           }} 
           />
-            <h2>Car 1</h2>
-            <p>$100 000</p>
+          <div className={styles.info}>
+            <h2>{car.name}</h2>
+            <p>{new Intl.NumberFormat('ru-RU', {
+              style: 
+              'currency',
+              currency: 'USD'
+            }).format(car.price)}</p>
             <button>Read more</button>
           </div>
+          </div>
+          ))}
         </div>
       </div>
     )

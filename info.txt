@@ -2,4 +2,8 @@ video url:
 https://www.youtube.com/watch?v=GCgFywsgk8o&t=1226s
 
 video stop:
-20.13
+00:27:18 - Условия внутри JSX - тернарный оператор
+
+Команды:
+
+npm run dev - запустить проект
